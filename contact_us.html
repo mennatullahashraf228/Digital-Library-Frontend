@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar LTR</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+      <style>
+                .sidebar {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100%;
+            background-color: #e9e9e9db;
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            overflow-y: auto;
+        }
+        .sidebar.active:nth-child(1) {
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: rgb(47, 72, 88);
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            color: #5d9c89;
+        }
+
+        #menu_btn_icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        #menu_btn_icon .bar {
+            height: 3px;
+            background-color: black;
+        }
+
+        #menu_btn_icon .bar:nth-child(1) {
+            width: 13px;
+        }
+
+        #menu_btn_icon .bar:nth-child(2) {
+            width: 26px;
+        }
+
+        #menu_btn_icon .bar:nth-child(3) {
+            width: 17px;
+        }
+
+        .cart-sidebar {
+            left: auto;
+            right: -350px;
+            transition: right 0.3s ease;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        #cart-count{
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 15px;
+            color: #fff;
+            background-color:rgb(47, 72, 88);
+            padding: 0 7px;
+            border-radius: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    body {
+      font-family: "Philosopher", sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: rgb(47, 72, 88);
+    }
+
+    .first {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: rgb(47, 72, 88);
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .first h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .first p {
+      font-size: 18px;
+    }
+
+    .fform {
+      flex: 1;
+      background-color: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1.5px solid rgb(129, 134, 129);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .user {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .user .inf {
+      flex: 1 1 45%;
+    }
+
+    .user input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1.5px solid rgb(200, 233, 200);
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    .sub {
+      width: 200px;
+      color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top:10px ;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+    background-size: 300%;
+    background-position: right;
+    transition: all 0.5s;
+    }
+
+    .sub:hover {
+      background-position: left;
+    color: #fff;
+    transition: all 0.5s;
+    }
+
+    .bigContact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px;
+      gap: 20px;
+    }
+
+    .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .office,
+    .team,
+    .follow {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1.5px solid rgb(200, 233, 200);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .mm {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .mm i {
+      color: #5d9c89;
+      font-size: 20px;
+      margin-top: 5px;
+    }
+
+    .member {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .member img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h5 {
+      color: #5d9c89;
+      margin: 0;
+    }
+
+    .social-icons a {
+      margin-right: 10px;
+      font-size: 20px;
+      color: #444;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: green;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .faq-question {
+      background-color: #f5f8ff;
+      border: none;
+      width: 100%;
+      padding: 15px 20px;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: "\25BC";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s;
+    }
+
+    .faq-question.active::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #fff;
+      transition: max-height 0.4s ease;
+      padding: 0 20px;
+    }
+
+    .faq-answer p {
+      margin: 15px 0;
+    }
+
+    .footer {
+            background-color: #313439;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover,
+        .footer-section p:hover,
+        .footer-section i:hover,
+        .footer-bottom span:hover {
+            color: rgb(14, 136, 20);
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            color: white;
+            transition: color 0.3s;
+        }
+  </style>
+</head>
+<header>
+        <div id="sidebar" class="sidebar">
+            <button id="closeSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+            <a href="after_login.html">Home</a>
+            <a href="modern.html">Modern</a>
+            <a href="classic.html">Classic</a>
+            <a href="fav.html">Favorites</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="index.html">Logout</a>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex justify-content-around align-items-center">
+                <div class="d-flex align-items-center">
+                    <div id="menu_btn" class="me-2">
+                        <button id="menu_btn_icon">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
+                </div>
+
+                <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                </form>
+
+                <div id="prof" style="font-family: Philosopher"></div>
+
+                <div class="mm d-flex">
+                    <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
+                        <li class="nav-item me-3"></li>
+                        <li class="nav-item">
+                            <button class="cart_btn">
+                                <i class="fa-solid fa-store"></i>
+                                <span id="cart-count">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="cartSidebar" class="sidebar cart-sidebar">
+            <button id="closeCartSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+            <h4 style="padding: 0 20px;">Your Cart</h4>
+            <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
+        </div>
+    </header>
+<body>
+
+    <div class="first">
+        <h1>contact us </h1>
+        <p>get in tutch with our team with real estatic experts</p>
+    </div>
+    <div class="bigContact">
+
+        <form id="fform">
+            <div>
+                <h2>send us a message</h2>
+                <div class="user">
+                    <div class="inf">
+                        <p>first name* </p>
+                        <input type="text">
+
+                    </div>
+                    <div class="inf">
+                        <p>last name* </p>
+                        <input type="text">
+
+                    </div>
+                    <div class="inf">
+                        <p>email address* </p>
+                        <input type="email">
+
+                    </div>
+                    <div class="inf">
+                        <p>phone number* </p>
+                        <input type="number">
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div>
+                <p>subject*</p>
+                <select>
+                    <option>select a subject</option>
+                </select>
+            </div>
+            <div>
+                <p>message*</p>
+                <textarea placeholder="tell us how we can help you "></textarea>
+            </div>
+            <button type="submit" class="sub"><i class="fa-solid fa-paper-plane"></i> send message</button>
+        </form>
+
+        <div class="details">
+            <div class="office">
+                <h4>office information</h4>
+                <div class="mm"><i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h6>main office</h6>
+                        <p>123 luxer streat</p>
+                        <p>downtown destract</p>
+                        <p> city, state 12345</p>
+                    </div>
+                </div>
+                <div class="mm"><i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h6>phone</h6>
+                        <p>+12345678900</p>
+                    </div>
+                </div>
+                <div class="mm"><i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h6>Email</h6>
+                        <p>info@luxuryestates.com</p>
+                    </div>
+                </div>
+                <div class="mm"><i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h6> business hour</h6>
+                        <p>mon-fri:9:00AM-6:00PM</p>
+                        <p>sat:10:00AM-4:00PM</p>
+                        <p>sun:closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team">
+                <h4>our team</h4>
+                <div class="member">
+                    <img src="assets/images/shutterstock_smile-or-remove-your-photo-scaled.jpg">
+                    <div>
+                        <h4>johan smith</h4>
+                        <p>senior agent</p>
+                        <h5>john@luxuryestates.com</h5>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="assets/images/smiling-young-job-applicant-her-cv-stylish-black-jacket-33789313.webp">
+                    <div>
+                        <h4>sara johunson</h4>
+                        <p>luxery specialist</p>
+                        <h5>sara@luxuryestates.com</h5>
+                    </div>
+                </div>
+                <div class="member">
+                    <img src="assets/images/03d8db5fa74516252ade0c0bc77aeb9e.jpg">
+                    <div>
+                        <h4>mechail broun</h4>
+                        <p>senior agent</p>
+                        <h5>mechail@luxuryestates.com</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="follow">
+                <h4>follow us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <div class="ccontaner">
+        <div class="contaner">
+            <div class="small">
+                <i class="fa-solid fa-map"></i>
+                <h4> inter active map</h4>
+                <p>our office location and server area</p>
+                <p> {map integration would be added here}</p>
+            </div>
+        </div>
+    </div> -->
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <button class="faq-question">How do I schedule a property viewing?</button>
+            <div class="faq-answer">
+                <p>You can schedule a property viewing by contacting us through phone, email, or by filling out the
+                    contact form
+                    above. We'll arrange a convenient time for you to visit the property.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">What documents do I need to rent/buy a property?</button>
+            <div class="faq-answer">
+                <p>Required documents typically include identification, proof of income, and possibly a credit report,
+                    depending
+                    on local regulations.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Do you offer property management services?</button>
+            <div class="faq-answer">
+                <p>Yes, we provide full property management services including maintenance, tenant screening, and rent
+                    collection.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Our Community Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-image">
+                <img src="assets/images/nora.png" alt="Book Cover">
+            </div>
+            <div class="newsletter-content">
+                <h2>Join Our Community</h2>
+                <p>Sign up & get 10% off your first books.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </div>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <i class="fas fa-layer-group"></i>
+                <div>
+                    <h4>Book Information?</h4>
+                    <p>Please send us an email at support@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-box">
+                <i class="fas fa-life-ring"></i>
+                <div>
+                    <h4>Need Help?</h4>
+                    <p>Please call us at 0123456789</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Bookshelf</p>
+            <p>© 2025 All right reserved. Made with love by <span>❤️ ThemeAtelier</span></p>
+        </div>
+    </footer>
+
+</body>
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+    <script src="bootstrap.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let favcards = JSON.parse(localStorage.getItem("loved")) || [];
+
+    var x = document.getElementById("nn");
+    x.innerHTML = `${favcards.length}`
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(q => {
+        q.addEventListener('click', () => {
+            const currentlyOpen = document.querySelector('.faq-question.active');
+            if (currentlyOpen && currentlyOpen !== q) {
+                currentlyOpen.classList.remove('active');
+                currentlyOpen.nextElementSibling.style.maxHeight = null;
+            }
+
+            q.classList.toggle('active');
+            const answer = q.nextElementSibling;
+            if (q.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+</script>
+
+</html>

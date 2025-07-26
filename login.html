@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hospital</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            align-items: center;
+            height: 100vh;
+            font-family: "Philosopher", sans-serif;
+        }
+
+        .login-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-form select,
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-form button {
+            width: 100%;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+            background-size: 300%;
+            background-position: right;
+            transition: all 0.5s;
+        }
+
+        .login-form button:hover {
+            background-position: left;
+            color: #fff;
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-around align-items-center">
+
+            <div class="d-flex align-items-center">
+                <div id="menu_btn" class="me-2">
+                    <button id="menu_btn_icon">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand d-flex d-none d-lg-flex" href="#">BOOK-MA</a>
+            </div>
+
+            <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px ;"
+                role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            </form>
+
+            <div class="mm d-flex">
+                <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
+                    <li class="nav-item">
+                            <button class="cart_btn">
+                                <i class="fa-solid fa-store"></i>
+                                <span></span>
+                            </button>
+                        </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="login-container" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <form class="login-form" id="login-form">
+            <h2>Login</h2>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <button type="button" id="btnn">Sign in</button>
+            <span>Don't have an account?</span> 
+            <a href="reg.html">Sign up</a>
+        </form>
+    </div>
+
+    <script src="assets/js/bootstrap.js"></script>
+
+    <script>
+        // عند تحميل الصفحة
+        window.addEventListener("DOMContentLoaded", () => {
+            const loggedIn = localStorage.getItem("loggedIn");
+            if (loggedIn === "true") {
+                document.getElementById("counterBtn").style.display = "none";
+                document.getElementById("addBookBtn").classList.remove("d-none");
+            }
+        });
+
+        // عند الضغط على زر تسجيل الدخول
+        document.getElementById('btnn').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+
+            fetch('https://edu-me01.github.io/Json-Data/Digital-Library.json')
+                .then(response => response.json())
+                .then(data => {
+                    var user = data.users.find(use => use.email === email && use.name === name);
+                    if (user) {
+                        localStorage.setItem("name", user.name);
+                        localStorage.setItem("loggedIn", "true"); // عشان يفضل فاكر تسجيل الدخول
+                        window.location.href = 'after_login.html';
+                    } else {
+                        alert('Invalid credentials');
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>

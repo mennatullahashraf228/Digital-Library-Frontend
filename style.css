@@ -1,0 +1,725 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+body {
+    color: #676768;
+    background-color: #e9e9e955;
+    font-family: Poppins, sans-serif;
+    line-height: 1.5;
+}
+
+
+.navbar {
+    background-color: #fff !important;
+}
+
+#menu_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    margin: 0 10px 0 30px;
+}
+
+.navbar-brand {
+    font-family: "Philosopher", sans-serif;
+    margin: 0 10px;
+    font-size: 26px;
+    font-weight: 700;
+    color: rgb(47, 72, 88);
+}
+
+#menu_btn_icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 30px;
+}
+
+.bar {
+    background-color: rgb(47, 72, 88);
+    display: flex;
+    height: 3px;
+    width: 13px;
+    border-radius: 0.125rem;
+    transition: 0.25s ease-in-out;
+}
+
+.bar:nth-child(2) {
+    width: 26px;
+}
+
+.bar:nth-child(3) {
+    width: 18px;
+}
+
+#menu_btn:hover .bar:nth-child(1) {
+    width: 26px;
+}
+
+#menu_btn:hover .bar:nth-child(2) {
+    width: 13px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.nav-link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Philosopher", sans-serif;
+    color: rgb(47, 72, 88);
+}
+
+.nav-link i {
+    font-size: 18px;
+    color: rgb(74, 97, 112);
+}
+
+.hero .next:hover {
+    background-color: rgb(74, 97, 112);
+}
+
+.nav-item-btn {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+    background-size: 250%;
+    background-position: right;
+    transition: all 0.5s;
+}
+
+.nav-item-btn:hover {
+    background-position: left;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+#menu_btn_icon {
+    background-color: #fff !important;
+}
+
+.philosopher-regular {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.philosopher-bold {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.philosopher-regular-italic {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.philosopher-bold-italic {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.form-control {
+    padding: 15px;
+    background-color: #e6e5e58e;
+}
+
+.mm {
+    margin: 0 40px 0 0;
+}
+
+.cart_btn {
+    font-size: 24px;
+    background-color: #fff;
+    color: rgb(47, 72, 88);
+}
+
+
+
+.sales {
+    display: flex;
+    gap: 40px;
+    background-color: #fff;
+    padding: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sale {
+    /* width: 400px; */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(123, 122, 122, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.sale:hover .sale-img {
+    transform: scale(1.06);
+    transition: all 0.6s;
+}
+
+.sale-p {
+    padding: 15px 25px;
+    margin: 0 10px;
+}
+
+.sale-p p {
+    color: #5a8f7b;
+    font-weight: bold;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+}
+
+.sale-p h4 {
+    font-family: "Philosopher", sans-serif;
+    color: #000;
+    font-weight: 550;
+    font-size: 17px;
+}
+
+.sale-p span {
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+}
+
+.sale-img img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+@media (min-width: 800px) {
+    .sale {
+        display: flex;
+    }
+
+    .sale-p {
+        padding: 15px;
+    }
+
+    .sale-p p {
+        font-size: 20px;
+    }
+
+    .sale-p h4 {
+        font-size: 25px;
+    }
+
+    .sale-p span {
+        font-size: 23px;
+    }
+    
+}
+@media (max-width: 800px) {
+    .sales {
+       gap: 10px;
+    }
+    .sale-p {
+        padding: 5px;
+    }
+
+    .sale-p p {
+        font-size: 14px;
+    }
+
+    .sale-p h4 {
+        font-size: 13px;
+    }
+
+    .sale-p span {
+        font-size: 14px;
+    }
+    
+}
+
+.pric {
+    color: #5a8f7b;
+}
+
+.divider-triangle {
+    background: #a9d0c1;
+    width: 200px;
+    height: 2px;
+    position: relative;
+}
+
+.divider-triangle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-color: #57aa8a27;
+    z-index: 1;
+}
+
+.divider-triangle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background-color: #7bc5a74d;
+    z-index: 1;
+}
+
+.gallery {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery p {
+    color: #5a8f7b;
+    font-weight: bold;
+    font-family: "Roboto Mono", monospace;
+    font-size: 21px;
+    margin: 0;
+}
+
+.gallery h3 {
+    font-family: "Philosopher", sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+    color: rgb(47, 72, 88);
+}
+
+.Popular_books {
+    /* overflow: hidden;
+    position: relative; */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.p_book {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(123, 122, 122, 0.2);
+    width: 20%;
+}
+
+@media(max-width: 800px) {
+    .p_book {
+        width: 40%;
+    }
+    .p_book-p h4 {
+        font-size: 18px;
+    }
+    .p_book-p p {
+        font-size: 15px;
+    }
+    .p_book-p span {
+        font-size: 13px;
+    }
+    .add_to_card_btn {
+    width: 100%;
+    padding: 4px 15px;
+    font-size: 15px !important;
+}
+}
+
+.p_book-p {
+    padding: 15px;
+    margin-top: 0;
+    max-height: 175px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.p_book:hover .icon-btn {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.p_book-p h4 {
+    font-family: "Philosopher", sans-serif;
+    color: rgb(47, 72, 88);
+    font-weight: 550;
+    /* font-size: 17px; */
+}
+
+.p_book-p p {
+    color: rgb(135, 137, 138);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.p_book-span {
+    color: rgb(47, 72, 88);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.p_book-img {
+    position: relative;
+}
+
+.p_book-img img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+
+}
+/* .p_book_details{
+    display: flex;
+    gap: 20px;
+} */
+.p_book_details1{
+    display: flex;
+    gap: 110px;
+}
+.p_book-img_detals{
+    width: 100%;
+
+
+}
+.p_book-img_detals img{
+    height: 280px;
+    width: 100%;
+}
+.p_book-p_details h4{
+    font-family: "Philosopher", sans-serif;
+    color: rgb(47, 72, 88);
+}
+.p_book-p_details p{
+    color: rgb(47, 72, 88);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin: 4px;
+}
+.p_p_details{
+    margin: 2px;
+    color: rgb(47, 72, 88);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+}
+.top-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icon-btn {
+    font-size: 13px;
+    background-color: #5a8f7b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 10px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.icon-btn:hover {
+    background-color: #39554b;
+    transition: all 0.5s;
+}
+
+.add_to_card_btn {
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+    background-size: 300%;
+    background-position: right;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.add_to_card_btn:hover {
+    background-position: left;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.p_book:hover .p_book-p {
+    max-height: 300px;
+    margin-top: -60px;
+}
+
+.p_book:hover .add_to_card_btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.quantity-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 160px;
+    border-radius: 8px;
+    background-color: #1e2a36;
+    color: white;
+    margin-top: 25px;
+}
+
+.quantity-box i:hover {
+    color: #b3ded1;
+    transition: all 0.5s;
+}
+
+/* .fa-plus{
+    padding: 17px;
+    width: 46px;
+    border-radius: 0 8px 8px 0;
+    text-align: center;
+}
+.fa-plus:hover{
+    background-color: #5d9c89;
+    transition: all 0.5s;
+}
+.fa-trash{
+    padding: 17px;
+    width: 37px;
+    border-radius: 0 8px 8px 0;
+    text-align: center;
+}
+.fa-trash:hover{
+    background-color: #5d9c89;
+    transition: all 0.5s;
+} */
+.newsletter-section {
+    background: #fff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-container {
+    display: flex;
+    max-width: 1000px;
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.newsletter-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-image img {
+    max-width: 300px;
+    width: 83%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+.newsletter-content {
+    padding: 30px;
+    flex: 1;
+}
+
+.newsletter-content h2 {
+    font-size: 28px;
+    color: #1c3b4d;
+}
+
+.newsletter-content p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: #6c757d;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.newsletter-form button {
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+    background-size: 300%;
+    background-position: right;
+    transition: all 0.5s;
+}
+
+.newsletter-form button:hover {
+    background-position: left;
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 18px;
+    color: #ffffff;
+    background: #4f816c;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.social-icons i:hover {
+    background: #2c4755;
+    transition: all 0.5s;
+}
+@media (max-width: 800px) {
+    .newsletter-image{
+    width: 100%;
+}
+    .newsletter-content h2 {
+    font-size: 18px;
+}
+
+.newsletter-content p {
+    font-size: 10px;
+}
+.newsletter-container {
+    display: flex;
+}
+.newsletter-form input {
+    font-size: 13px;
+}
+
+.newsletter-form button {
+    font-size: 12px;
+}
+.newsletter-form {
+    width: 50%;
+}
+.social-icons i {
+    font-size: 12px;
+}
+.footer-box h4 {
+    font-size: 12px !important;
+}
+
+.footer-box p {
+    font-size: 10px;
+}
+.footer-box {
+    height: 10px;
+}
+}
+.footer {
+    background: #2c4755;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-box i {
+    font-size: 30px;
+    color: #7ab89a;
+}
+
+.footer-box h4 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.footer-box p {
+    margin: 0;
+    color: #ccc;
+}
+
+.footer-bottom {
+    border-top: 1px solid #44626e;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-bottom span {
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}

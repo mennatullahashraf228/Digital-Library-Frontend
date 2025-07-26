@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar LTR</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100%;
+            background-color: #e9e9e9db;
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            overflow-y: auto;
+        }
+        .sidebar.active:nth-child(1) {
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: rgb(47, 72, 88);
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            color: #5d9c89;
+        }
+
+        #menu_btn_icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        #menu_btn_icon .bar {
+            height: 3px;
+            background-color: black;
+        }
+
+        #menu_btn_icon .bar:nth-child(1) {
+            width: 13px;
+        }
+
+        #menu_btn_icon .bar:nth-child(2) {
+            width: 26px;
+        }
+
+        #menu_btn_icon .bar:nth-child(3) {
+            width: 17px;
+        }
+
+        .cart-sidebar {
+            left: auto;
+            right: -350px;
+            transition: right 0.3s ease;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        #cart-count{
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 15px;
+            color: #fff;
+            background-color:rgb(47, 72, 88);
+            padding: 0 7px;
+            border-radius: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .first {
+            display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: rgb(47, 72, 88);
+      padding: 40px 20px;
+      color: white;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+            background-color:#94ddc770;
+            padding: 20px 70px;
+            border-radius: 6px;
+            margin: 30px;
+        }
+
+        .details span {
+            background-color: rgba(187, 237, 208, 0.479);
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .vew {
+            display: flex;
+            gap: 20px;
+            transition: .5s;
+        }
+
+        .vew:hover {
+            transform: scale(1.04);
+        }
+
+        .vew i {
+            font-size: 30px;
+            color:rgb(47, 72, 88);
+        }
+
+
+
+
+        body {
+
+            font-family: "Philosopher", sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: rgb(47, 72, 88);
+        }
+
+
+        #favcards {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 10px 10px 25px rgb(102, 102, 102);
+            padding: 10px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 90%;
+            min-height: 400px;
+            text-align: center;
+        }
+
+        #favcards p {
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        
+        .call {
+            width: 40%;
+        }
+
+        .headicon {
+            margin-top: 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+
+        .empty {
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        
+        .footer {
+            background-color: #313439;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 20px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover,
+        .footer-section p:hover,
+        .footer-section i:hover,
+        .footer-bottom span:hover {
+            color: rgb(47, 72, 88);
+        }
+
+        .social-icons a {
+            margin-right: 10px;
+            font-size: 18px;
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            color: white;
+            transition: color 0.3s;
+        }
+
+    </style>
+
+</head>
+
+<header>
+        <div id="sidebar" class="sidebar">
+            <button id="closeSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+            <a href="after_login.html">Home</a>
+            <a href="modern.html">Modern</a>
+            <a href="classic.html">Classic</a>
+            <a href="fav.html">Favorites</a>
+            <a href="contact_us.html">Contact Us</a>
+            <a href="index.html">Logout</a>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex justify-content-around align-items-center">
+                <div class="d-flex align-items-center">
+                    <div id="menu_btn" class="me-2">
+                        <button id="menu_btn_icon">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
+                </div>
+
+                <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                </form>
+
+                <div id="prof" style="font-family: Philosopher"></div>
+
+                <div class="mm d-flex">
+                    <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
+                        <li class="nav-item me-3"></li>
+                        <li class="nav-item">
+                            <button class="cart_btn">
+                                <i class="fa-solid fa-store"></i>
+                                <span id="cart-count">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="cartSidebar" class="sidebar cart-sidebar">
+            <button id="closeCartSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+            <h4 style="padding: 0 20px;">Your Cart</h4>
+            <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
+        </div>
+    </header>
+
+<body>
+
+    <div class="first">
+        <h1>My Favourite properties</h1>
+        <p>Brouse the properties you've saved to your Favourite list</p>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <div class="detail">
+        <div class="vew">
+            <div><i class="fa-solid fa-heart"></i></div>
+            <div>
+                <p class="num"></p>
+                <p>total Favourites</p>
+            </div>
+
+        </div>
+        <div class="vew">
+            <div class="num"><i class="fa-solid fa-eye"></i></div>
+            <div>
+                <p>0</p>
+                <p>propireties view</p>
+            </div>
+
+        </div>
+        <div class="vew">
+            <div class="num"><i class="fa-solid fa-share-nodes"></i></div>
+            <div>
+                <p>0</p>
+                <p>propireties shared</p>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <div id="favcards">
+        <p><i class="fa-solid fa-heart"></i>Saved Favorites</p>
+
+    </div>
+    <!-- Join Our Community Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-image">
+                <img src="assets/images/nora.png" alt="Book Cover">
+            </div>
+            <div class="newsletter-content">
+                <h2>Join Our Community</h2>
+                <p>Sign up & get 10% off your first books.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </div>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <i class="fas fa-layer-group"></i>
+                <div>
+                    <h4>Book Information?</h4>
+                    <p>Please send us an email at support@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-box">
+                <i class="fas fa-life-ring"></i>
+                <div>
+                    <h4>Need Help?</h4>
+                    <p>Please call us at 0123456789</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Bookshelf</p>
+            <p>© 2025 All right reserved. Made with love by <span>❤️ ThemeAtelier</span></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+    <script src="bootstrap.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        const container = document.getElementById("favcards");
+        var favcards = JSON.parse(localStorage.getItem("loved")) || [];
+        console.log(favcards);
+        var datta = JSON.parse(localStorage.getItem("datta"))
+
+        // var x = document.getElementById("nn");
+        // x.innerHTML = `${favcards.length}`
+        var y = document.getElementsByClassName("num")[0];
+        y.innerHTML = `${favcards.length}`
+        function trips() {
+            container.innerHTML = "";
+            container.classList.add("container");
+            if (favcards.length === 0) {
+                container.innerHTML = `
+    
+        <div class="topbutton text-end w-100 px-4 mt-4">
+             
+            <a href="#" class="btn btn-primary" style="background-color: rgb(27, 138, 73) !important;">
+                <i class="fa-solid fa-plus me-2"></i> Add sample items
+            </a>
+        </div>
+        <div class="theheading">
+        <h1>my favorites properities <i class="fa-solid fa-heart"></i></h1>
+        <p>view your saved favorite properties</p>
+    </div>
+       
+
+        <div class="d-flex align-items-center justify-content-center" style="min-height: 60vh; width: 100%;">
+            <div class="text-center" style="max-width: 500px;">
+                <h4 class="mb-3">
+                    <i class="fa-solid fa-heart-crack"></i> No Favorites Yet
+                </h4>
+                <p class="mb-4 fs-5 text-secondary">
+                    Start exploring propirties and add them to your favorites to see them here.
+                </p>
+                <a href="#" class="btn btn-primary px-4 py-2 rounded"  style="background-color: rgb(27, 138, 73) !important;">
+                    <i class="fa-solid fa-magnifying-glass-location me-2"></i> Explore propirties
+                </a>
+            </div>
+        </div>
+    `;
+                return;
+            }
+
+
+
+
+
+
+
+            container.innerHTML = `
+           <div class="w-100 text-end me-3 mb-3">
+    <button class="btn2" style="color: green; border: none; background-color: white;">   <i class="fa-solid fa-share-nodes" style="color: rgb(27, 138, 73) !important;"></i> share favorites</button>
+      
+<button class="btn" onclick="clearAll()" style="color: green;">
+            <i class="fa-solid fa-trash "></i> Clear All
+        </button>
+  
+</div>
+
+
+        `;
+
+
+
+
+
+            favcards.forEach((item, index) => {
+                const divv = document.getElementById("favcards");
+                divv.innerHTML += `
+                        <div class="p_book" data-id="${item.id}">
+                    <div class="p_book-img">
+                        <img src="${item.coverImage}">
+                        <div class="top-icons">
+                            <button class="icon-btn" onclick="openModal(${item.id})"><i class="fas fa-expand"></i></button>
+                            
+                            <!-- Modal -->
+                            <div id="myModal" class="modal">
+                                <div id="m_content" class="modal-content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p_book-p">
+                        <h4>${item.title}</h4>
+                        <p>${item.category}</p>
+                        <p>By:<span class="p_book-span">${item.author}</span></p>
+                        <p>Downloads: <span class="p_book-span">+${item.downloads}</span></p>
+                    </div>     
+                </div>`;
+                container.appendChild(div);
+            });
+        }
+
+
+
+        function viewItem(id) {
+            const selectedItem = favcards.find(p => p.id === id);
+            if (selectedItem) {
+                localStorage.setItem("view", JSON.stringify(selectedItem));
+                window.location.href = "$";
+            }
+        }
+        function ViewDetails(Id) {
+            localStorage.setItem("viewDetails", Id);
+            window.location.href = "details.html"; //
+        }
+
+        function removeFromCart(index) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "This item will be removed from your favorites.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, remove it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    favcards.splice(index, 1);
+                    localStorage.setItem("loved", JSON.stringify(favcards));
+                    trips();
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "The item has been removed.",
+                        icon: "success",
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                }
+            });
+        }
+
+        function clearAll() {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "All favorites will be deleted!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete all!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("loved");
+                    favcards = [];
+                    trips();
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: 'All favorites have been removed.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                }
+            });
+        }
+
+        trips();
+
+
+         const menuBtn = document.getElementById("menu_btn");
+        const sidebar = document.getElementById("sidebar");
+        const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+
+        menuBtn.addEventListener("click", () => sidebar.classList.toggle("active"));
+        closeSidebarBtn.addEventListener("click", () => sidebar.classList.remove("active"));
+
+        const cartBtn = document.querySelector(".cart_btn");
+        const cartSidebar = document.getElementById("cartSidebar");
+        const closeCartSidebarBtn = document.getElementById("closeCartSidebarBtn");
+
+        cartBtn.addEventListener("click", () => {
+            cartSidebar.classList.toggle("active");
+            updateCartSidebar();
+        });
+
+        closeCartSidebarBtn.addEventListener("click", () => cartSidebar.classList.remove("active"));
+
+        function updateCartSidebar() {
+            let arr = JSON.parse(localStorage.getItem("addProduct")) || [];
+            const cartContent = document.getElementById("cartContent");
+
+            if (arr.length === 0) {
+                cartContent.innerHTML = "<p>You have no items in your cart.</p>";
+                return;
+            }
+
+            cartContent.innerHTML = "";
+            arr.forEach(book => {
+                cartContent.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${book.coverImage}" alt="${book.title}">
+                        <div class="cart-item-info">
+                            <strong>${book.title}</strong>
+                            <p>Qty: ${book.quantity}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        const userName = localStorage.getItem("name");
+        if (userName) {
+            document.getElementById("prof").innerHTML = `<h4 style="font-size: 18px; color: rgb(74, 97, 112);"><i class="fa-solid fa-user"></i> ${userName}</h4>`;
+        }
+        function openModal(ID) {
+    document.getElementById("myModal").style.display = "block";
+    const book_details = datta.books.find(b => b.id ===ID)
+    var overly = document.getElementById("m_content")
+    overly.innerHTML = `
+    <button id="closeSidebarBtn" onclick="closeModal()" style="position: absolute; top: 4px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+        <div class="p_book_details" data-id="${book_details.id}">
+                    <div class="p_book-img_detals">
+                        <img src="${book_details.coverImage}">
+                    </div>
+                    <div class="p_book-p_details">
+                        <h4>${book_details.title}</h4>
+                        <p>category: <span class="p_book-span">${book_details.category}</span></p>
+                        <span class="p_book-span"> ${book_details.tags[0]}, ${book_details.tags[1]}, ${book_details.tags[2]}, ${book_details.tags[3]} </span>
+                        <p>By: <span class="p_book-span">${book_details.author}</span></p>
+                        <p>Downloads: <span class="p_book-span"> +${book_details.downloads}</span></p>
+                        <p>${book_details.description}</p>
+                        <div style="background-color: rgb(47, 72, 88);
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;"></div>
+                        <div style="display:flex; gap:20px">
+                            <div>
+                                <p class="p_p_details">language: <span class="p_book-span">${book_details.language}</span></p>
+                                <p class="p_p_details">pages: <span class="p_book-span">${book_details.pages}</span></p>
+                                <p class="p_p_details"><span class="p_book-span">${book_details.format}</span></p>
+                            </div>
+                            <div>
+                                <p class="p_p_details">Size: <span class="p_book-span">${book_details.fileSize}</span></p>
+                                <p class="p_p_details">is available: <span class="p_book-span">${book_details.available}</span></p>
+                                <p class="p_p_details">publication Year: <span class="p_book-span">${book_details.publicationYear}</span></p>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>     
+                </div>
+                        
+    `;
+    
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+
+
+    </script>
+</body>
+
+</html>
