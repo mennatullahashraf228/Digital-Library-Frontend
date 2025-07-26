@@ -526,10 +526,10 @@
             <div class="follow">
                 <h4>follow us</h4>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></i></a>
+                    <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
 
             </div>
@@ -657,5 +657,52 @@
         });
     });
 </script>
+<script>
+            const menuBtn = document.getElementById("menu_btn");
+            const sidebar = document.getElementById("sidebar");
+            const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+
+            menuBtn.addEventListener("click", () => sidebar.classList.toggle("active"));
+            closeSidebarBtn.addEventListener("click", () => sidebar.classList.remove("active"));
+
+            const cartBtn = document.querySelector(".cart_btn");
+            const cartSidebar = document.getElementById("cartSidebar");
+            const closeCartSidebarBtn = document.getElementById("closeCartSidebarBtn");
+
+            cartBtn.addEventListener("click", () => {
+                cartSidebar.classList.toggle("active");
+                updateCartSidebar();
+            });
+
+            closeCartSidebarBtn.addEventListener("click", () => cartSidebar.classList.remove("active"));
+
+            function updateCartSidebar() {
+                let arr = JSON.parse(localStorage.getItem("addProduct")) || [];
+                const cartContent = document.getElementById("cartContent");
+
+                if (arr.length === 0) {
+                    cartContent.innerHTML = "<p>You have no items in your cart.</p>";
+                    return;
+                }
+
+                cartContent.innerHTML = "";
+                arr.forEach(book => {
+                    cartContent.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${book.coverImage}" alt="${book.title}">
+                        <div class="cart-item-info">
+                            <strong>${book.title}</strong>
+                            <p>Qty: ${book.quantity}</p>
+                        </div>
+                    </div>
+                `;
+                });
+            }
+
+            const userName = localStorage.getItem("name");
+            if (userName) {
+                document.getElementById("prof").innerHTML = `<h4 style="font-size: 18px; color: rgb(74, 97, 112);"><i class="fa-solid fa-user"></i> ${userName}</h4>`;
+            }
+        </script>
 
 </html>
