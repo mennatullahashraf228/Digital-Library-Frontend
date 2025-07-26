@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
@@ -31,6 +32,7 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             overflow-y: auto;
         }
+
         .sidebar.active:nth-child(1) {
             left: 0;
         }
@@ -102,13 +104,14 @@
         .cart-item-info {
             flex-grow: 1;
         }
-        #cart-count{
+
+        #cart-count {
             position: absolute;
             top: 20px;
             right: 40px;
             font-size: 15px;
             color: #fff;
-            background-color:rgb(47, 72, 88);
+            background-color: rgb(47, 72, 88);
             padding: 0 7px;
             border-radius: 20px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -116,18 +119,18 @@
 
         .first {
             display: flex;
-      flex-direction: column;
-      text-align: center;
-      background-color: rgb(47, 72, 88);
-      padding: 40px 20px;
-      color: white;
+            flex-direction: column;
+            text-align: center;
+            background-color: rgb(47, 72, 88);
+            padding: 40px 20px;
+            color: white;
         }
 
         .detail {
             display: flex;
             justify-content: space-between;
             width: 65%;
-            background-color:#94ddc770;
+            background-color: #94ddc770;
             padding: 20px 70px;
             border-radius: 6px;
             margin: 30px;
@@ -151,7 +154,7 @@
 
         .vew i {
             font-size: 30px;
-            color:rgb(47, 72, 88);
+            color: rgb(47, 72, 88);
         }
 
 
@@ -160,10 +163,10 @@
         body {
 
             font-family: "Philosopher", sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: rgb(47, 72, 88);
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: rgb(47, 72, 88);
         }
 
 
@@ -190,7 +193,7 @@
             width: 100%;
         }
 
-        
+
         .call {
             width: 40%;
         }
@@ -214,7 +217,7 @@
         }
 
 
-        
+
         .footer {
             background-color: #313439;
             color: white;
@@ -274,63 +277,66 @@
             color: white;
             transition: color 0.3s;
         }
-
     </style>
 
 </head>
 
-<header>
-        <div id="sidebar" class="sidebar">
-            <button id="closeSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
-            <a href="after_login.html">Home</a>
-            <a href="modern.html">Modern</a>
-            <a href="classic.html">Classic</a>
-            <a href="fav.html">Favorites</a>
-            <a href="contact_us.html">Contact Us</a>
-            <a href="index.html">Logout</a>
-        </div>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid d-flex justify-content-around align-items-center">
-                <div class="d-flex align-items-center">
-                    <div id="menu_btn" class="me-2">
-                        <button id="menu_btn_icon">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </button>
-                    </div>
-                    <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
-                </div>
-
-                <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                </form>
-
-                <div id="prof" style="font-family: Philosopher"></div>
-
-                <div class="mm d-flex">
-                    <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
-                        <li class="nav-item me-3"></li>
-                        <li class="nav-item">
-                            <button class="cart_btn">
-                                <i class="fa-solid fa-store"></i>
-                                <span id="cart-count">0</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div id="cartSidebar" class="sidebar cart-sidebar">
-            <button id="closeCartSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
-            <h4 style="padding: 0 20px;">Your Cart</h4>
-            <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
-        </div>
-    </header>
 
 <body>
+    <header>
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn"
+            style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+        <a href="after_login.html">Home</a>
+        <a href="modern.html">Modern</a>
+        <a href="classic.html">Classic</a>
+        <a href="fav.html">Favorites</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="index.html">Logout</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-around align-items-center">
+            <div class="d-flex align-items-center">
+                <div id="menu_btn" class="me-2">
+                    <button id="menu_btn_icon">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
+            </div>
+
+            <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;"
+                role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            </form>
+
+            <div id="prof" style="font-family: Philosopher"></div>
+
+            <div class="mm d-flex">
+                <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
+                    <li class="nav-item me-3"></li>
+                    <li class="nav-item">
+                        <button class="cart_btn">
+                            <i class="fa-solid fa-store"></i>
+                            <span id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cartSidebar" class="sidebar cart-sidebar">
+        <button id="closeCartSidebarBtn"
+            style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+        <h4 style="padding: 0 20px;">Your Cart</h4>
+        <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
+    </div>
+</header>
 
     <div class="first">
         <h1>My Favourite properties</h1>
@@ -338,32 +344,32 @@
     </div>
     <div style="display: flex; justify-content: center;">
         <div class="detail">
-        <div class="vew">
-            <div><i class="fa-solid fa-heart"></i></div>
-            <div>
-                <p class="num"></p>
-                <p>total Favourites</p>
+            <div class="vew">
+                <div><i class="fa-solid fa-heart"></i></div>
+                <div>
+                    <p class="num"></p>
+                    <p>total Favourites</p>
+                </div>
+
+            </div>
+            <div class="vew">
+                <div class="num"><i class="fa-solid fa-eye"></i></div>
+                <div>
+                    <p>0</p>
+                    <p>propireties view</p>
+                </div>
+
+            </div>
+            <div class="vew">
+                <div class="num"><i class="fa-solid fa-share-nodes"></i></div>
+                <div>
+                    <p>0</p>
+                    <p>propireties shared</p>
+                </div>
+
             </div>
 
         </div>
-        <div class="vew">
-            <div class="num"><i class="fa-solid fa-eye"></i></div>
-            <div>
-                <p>0</p>
-                <p>propireties view</p>
-            </div>
-
-        </div>
-        <div class="vew">
-            <div class="num"><i class="fa-solid fa-share-nodes"></i></div>
-            <div>
-                <p>0</p>
-                <p>propireties shared</p>
-            </div>
-
-        </div>
-
-    </div>
     </div>
 
     <div id="favcards">
@@ -445,7 +451,7 @@
     
         <div class="topbutton text-end w-100 px-4 mt-4">
              
-            <a href="#" class="btn btn-primary" style="background-color: rgb(27, 138, 73) !important;">
+            <a href="classic.html" class="btn btn-primary" style="background-color: #5d9c89 !important;">
                 <i class="fa-solid fa-plus me-2"></i> Add sample items
             </a>
         </div>
@@ -463,7 +469,7 @@
                 <p class="mb-4 fs-5 text-secondary">
                     Start exploring propirties and add them to your favorites to see them here.
                 </p>
-                <a href="#" class="btn btn-primary px-4 py-2 rounded"  style="background-color: rgb(27, 138, 73) !important;">
+                <a href="modern.html" class="btn btn-primary px-4 py-2 rounded"  style="background-color: #5d9c89 !important;">
                     <i class="fa-solid fa-magnifying-glass-location me-2"></i> Explore propirties
                 </a>
             </div>
@@ -480,9 +486,9 @@
 
             container.innerHTML = `
            <div class="w-100 text-end me-3 mb-3">
-    <button class="btn2" style="color: green; border: none; background-color: white;">   <i class="fa-solid fa-share-nodes" style="color: rgb(27, 138, 73) !important;"></i> share favorites</button>
+    <button class="btn2" style="color: green; border: none; background-color: white;">   <i class="fa-solid fa-share-nodes" style="color: #5d9c89 !important;"></i> share favorites</button>
       
-<button class="btn" onclick="clearAll()" style="color: green;">
+<button class="btn" onclick="clearAll()" style="color: #5d9c89;">
             <i class="fa-solid fa-trash "></i> Clear All
         </button>
   
@@ -592,7 +598,7 @@
         trips();
 
 
-         const menuBtn = document.getElementById("menu_btn");
+        const menuBtn = document.getElementById("menu_btn");
         const sidebar = document.getElementById("sidebar");
         const closeSidebarBtn = document.getElementById("closeSidebarBtn");
 
@@ -637,11 +643,13 @@
         if (userName) {
             document.getElementById("prof").innerHTML = `<h4 style="font-size: 18px; color: rgb(74, 97, 112);"><i class="fa-solid fa-user"></i> ${userName}</h4>`;
         }
+
+
         function openModal(ID) {
-    document.getElementById("myModal").style.display = "block";
-    const book_details = datta.books.find(b => b.id ===ID)
-    var overly = document.getElementById("m_content")
-    overly.innerHTML = `
+            document.getElementById("myModal").style.display = "block";
+            const book_details = datta.books.find(b => b.id === ID)
+            var overly = document.getElementById("m_content")
+            overly.innerHTML = `
     <button id="closeSidebarBtn" onclick="closeModal()" style="position: absolute; top: 4px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
         <div class="p_book_details" data-id="${book_details.id}">
                     <div class="p_book-img_detals">
@@ -677,12 +685,12 @@
                 </div>
                         
     `;
-    
-}
 
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
 
 
