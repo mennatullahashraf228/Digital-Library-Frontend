@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
@@ -26,6 +27,7 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             overflow-y: auto;
         }
+
         .sidebar.active:nth-child(1) {
             left: 0;
         }
@@ -97,289 +99,297 @@
         .cart-item-info {
             flex-grow: 1;
         }
-        #cart-count{
+
+        #cart-count {
             position: absolute;
             top: 20px;
             right: 40px;
             font-size: 15px;
             color: #fff;
-            background-color:rgb(47, 72, 88);
+            background-color: rgb(47, 72, 88);
             padding: 0 7px;
             border-radius: 20px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+
         .swiper {
-    width: 100%;
-    height: 750px;
+            width: 100%;
+            height: 750px;
 
-}
+        }
 
-.swiper-slide {
-    /* text-align: center; */
-    /* font-size: 18px; */
-    /* background: #444; */
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px;
-    justify-content: space-around;
-    padding: 90px 30px;
-}
+        .swiper-slide {
+            /* text-align: center; */
+            /* font-size: 18px; */
+            /* background: #444; */
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 20px;
+            justify-content: space-around;
+            padding: 90px 30px;
+        }
 
-@media (max-width: 800px) {
-    .swiper {
-        width: 100%;
-        height: 700px;
-    }
+        @media (max-width: 800px) {
+            .swiper {
+                width: 100%;
+                height: 700px;
+            }
 
-    .swiper-slide {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 30px;
-    }
+            .swiper-slide {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 30px;
+            }
 
-    .slide-img img {
-        max-width: 100%;
-    }
-    .swiper-slide p {
-    font-size: 10px;
-}
+            .slide-img img {
+                max-width: 100%;
+            }
 
-.swiper-slide h1 {
-    font-size: 25px !important;
-}
-.swiper-slide h3 {
-    font-size: 15px !important;
-}
-.shop_btn {
-    padding: 2px 15px !important;
-    font-size: 15px;
-}
-}
+            .swiper-slide p {
+                font-size: 10px;
+            }
 
-@media (min-width: 800px) {
-    .swiper-slide {
-        padding: 120px;
-    }
+            .swiper-slide h1 {
+                font-size: 25px !important;
+            }
 
-    .slide-img img {
-        max-width: 100%;
-    }
-}
+            .swiper-slide h3 {
+                font-size: 15px !important;
+            }
 
-/* .slide-img img{
+            .shop_btn {
+                padding: 2px 15px !important;
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .swiper-slide {
+                padding: 120px;
+            }
+
+            .slide-img img {
+                max-width: 100%;
+            }
+        }
+
+        /* .slide-img img{
     width: 270px;
 } */
-.swiper-pagination-bullet {
-    width: 7px;
-    height: 7px;
-    background-color: #ccc;
-    opacity: 1;
-    margin: 0 6px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
+        .swiper-pagination-bullet {
+            width: 7px;
+            height: 7px;
+            background-color: #ccc;
+            opacity: 1;
+            margin: 0 6px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
 
-.swiper-pagination-bullet-active {
-    background-color: rgb(74, 97, 112) !important;
+        .swiper-pagination-bullet-active {
+            background-color: rgb(74, 97, 112) !important;
 
-    transform: scale(1.2);
-    width: 25px !important;
-    border-radius: 10px !important;
-}
+            transform: scale(1.2);
+            width: 25px !important;
+            border-radius: 10px !important;
+        }
 
-.shop_btn {
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 2px;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
-    background-size: 250%;
-    background-position: right;
-    transition: all 0.5s;
-}
+        .shop_btn {
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: linear-gradient(440deg, rgb(47, 72, 88)50%, #5d9c89 50%);
+            background-size: 250%;
+            background-position: right;
+            transition: all 0.5s;
+        }
 
-.shop_btn:hover {
-    background-position: left;
-    color: #fff;
-    transition: all 0.5s;
-}
+        .shop_btn:hover {
+            background-position: left;
+            color: #fff;
+            transition: all 0.5s;
+        }
 
-/* .montserrat-uniquifier {
+        /* .montserrat-uniquifier {
   font-family: "Montserrat", sans-serif;
 } */
-.slide-img1 img {
-    width: 300px;
-    border-radius: 5px;
-}
+        .slide-img1 img {
+            width: 300px;
+            border-radius: 5px;
+        }
 
-.slide-img1 {
-    position: relative;
-    width: 350px;
-    height: 500px;
-    border-radius: 20px;
-    margin: 50px auto;
-    z-index: 1;
-    overflow: visible;
-}
+        .slide-img1 {
+            position: relative;
+            width: 350px;
+            height: 500px;
+            border-radius: 20px;
+            margin: 50px auto;
+            z-index: 1;
+            overflow: visible;
+        }
 
-.slide-img1::before {
-    content: "";
-    position: absolute;
-    bottom: 40px;
-    right: -25px;
-    width: 90%;
-    height: 85%;
-    border: 2px dashed #379d8c;
-    border-radius: 5px;
-    z-index: -1;
-}
+        .slide-img1::before {
+            content: "";
+            position: absolute;
+            bottom: 40px;
+            right: -25px;
+            width: 90%;
+            height: 85%;
+            border: 2px dashed #379d8c;
+            border-radius: 5px;
+            z-index: -1;
+        }
 
-.autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
-}
+        .autoplay-progress {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--swiper-theme-color);
+        }
 
-#jj {
-    opacity: 0;
-}
+        #jj {
+            opacity: 0;
+        }
 
-.autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
-}
+        .autoplay-progress svg {
+            --progress: 0;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            stroke-width: 4px;
+            stroke: var(--swiper-theme-color);
+            fill: none;
+            stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+            stroke-dasharray: 125.6;
+            transform: rotate(-90deg);
+        }
 
-.swiper-button-prev,
-.swiper-button-next {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
+        .swiper-button-prev,
+        .swiper-button-next {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
 
-.swiper:hover .swiper-button-prev,
-.swiper:hover .swiper-button-next {
-    opacity: 1;
+        .swiper:hover .swiper-button-prev,
+        .swiper:hover .swiper-button-next {
+            opacity: 1;
 
-}
+        }
 
-.swiper-button-prev,
-.swiper-button-next {
-    background-color: #5a8f7b;
-    color: white !important;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50px;
-    font-size: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
+        .swiper-button-prev,
+        .swiper-button-next {
+            background-color: #5a8f7b;
+            color: white !important;
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50px;
+            font-size: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: #39554b;
-    transition: all 0.5s;
-}
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background-color: #39554b;
+            transition: all 0.5s;
+        }
 
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 17px !important;
-    font-weight: bold;
-}
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 17px !important;
+            font-weight: bold;
+        }
 
-.swiper-slide p {
-    color: #5a8f7b;
-    font-weight: bold;
-    /* font-size: 16px; */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+        .swiper-slide p {
+            color: #5a8f7b;
+            font-weight: bold;
+            /* font-size: 16px; */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
 
-.swiper-slide h1 {
-    color: rgb(47, 72, 88);
-    font-family: "Philosopher", sans-serif;
-    font-weight: bold;
-    font-size: 45px;
-    margin-bottom: 30px;
-}
+        .swiper-slide h1 {
+            color: rgb(47, 72, 88);
+            font-family: "Philosopher", sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
 
-.swiper-slide h3 {
-    color: rgb(123, 135, 142);
-    font-family: "Philosopher", sans-serif;
-    ;
-    font-size: 25px;
-}
+        .swiper-slide h3 {
+            color: rgb(123, 135, 142);
+            font-family: "Philosopher", sans-serif;
+            ;
+            font-size: 25px;
+        }
     </style>
 </head>
-    <header>
-        <div id="sidebar" class="sidebar">
-            <button id="closeSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
-            <a href="after_login.html">Home</a>
-            <a href="modern.html">Modern</a>
-            <a href="classic.html">Classic</a>
-            <a href="fav.html">Favorites</a>
-            <a href="contact_us.html">Contact Us</a>
-            <a href="index.html">Logout</a>
-        </div>
+<header>
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn"
+            style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+        <a href="after_login.html">Home</a>
+        <a href="modern.html">Modern</a>
+        <a href="classic.html">Classic</a>
+        <a href="fav.html">Favorites</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="index.html">Logout</a>
+    </div>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid d-flex justify-content-around align-items-center">
-                <div class="d-flex align-items-center">
-                    <div id="menu_btn" class="me-2">
-                        <button id="menu_btn_icon">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </button>
-                    </div>
-                    <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-around align-items-center">
+            <div class="d-flex align-items-center">
+                <div id="menu_btn" class="me-2">
+                    <button id="menu_btn_icon">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
                 </div>
-
-                <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                </form>
-
-                <div id="prof" style="font-family: Philosopher"></div>
-
-                <div class="mm d-flex">
-                    <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
-                        <li class="nav-item me-3"></li>
-                        <li class="nav-item">
-                            <button class="cart_btn">
-                                <i class="fa-solid fa-store"></i>
-                                <span id="cart-count">0</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                <a class="navbar-brand d-none d-lg-flex" href="#">BOOK-MA</a>
             </div>
-        </nav>
 
-        <div id="cartSidebar" class="sidebar cart-sidebar">
-            <button id="closeCartSidebarBtn" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
-            <h4 style="padding: 0 20px;">Your Cart</h4>
-            <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
+            <form class="gg d-flex mx-auto" style="max-width: 900px; flex: 1; justify-content: center; margin: 0 10px;"
+                role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            </form>
+
+            <div id="prof" style="font-family: Philosopher"></div>
+
+            <div class="mm d-flex">
+                <ul class="navbar-nav mb-2 mb-lg-0 flex-row">
+                    <li class="nav-item me-3"></li>
+                    <li class="nav-item">
+                        <button class="cart_btn">
+                            <i class="fa-solid fa-store"></i>
+                            <span id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
+
+    <div id="cartSidebar" class="sidebar cart-sidebar">
+        <button id="closeCartSidebarBtn"
+            style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 22px; color: rgb(47, 72, 88); cursor: pointer;">✖</button>
+        <h4 style="padding: 0 20px;">Your Cart</h4>
+        <div id="cartContent" style="padding: 0 20px;">You have no items in your cart.</div>
+    </div>
+</header>
 
 <body>
     <!-- Swiper -->
@@ -531,24 +541,24 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="script.js"></script>
-      <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script>
         var name = localStorage.getItem("name");
         var userDiv = document.getElementById("prof");
